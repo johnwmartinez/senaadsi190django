@@ -7,47 +7,137 @@ from django.shortcuts import redirect
 
 def saludo(request):
     return render(request, 'index.html', {
-        'mensaje': 'Bienvenidos a nuestro proyecto',
-        'nombres': [1, 2, 3, 4, 'John'],
-        'suma': 5 + 3,
-        'alumnos': [
+        'correo': 'info@softbox190.com',
+        'celular': '+57 300 423 5239',
+        'direccion': 'Carrera 12 #34-56',
+        'promesa': 'Compra y paga contraentrega',
+        'social_media' : [
             {
-                'nombre': 'Allison',
-                'edad': '27',
-                'aprobo': True,
+                'enlace':'#',
+                'class':'fa fa-facebook',
             },
             {
-                'nombre': 'John',
-                'edad': '33',
-                'aprobo': True,
+                'enlace':'#',
+                'class':'fa fa-twitter',
             },
             {
-                'nombre': 'Milo',
-                'edad': '2',
-                'aprobo': True,
+                'enlace':'#',
+                'class':'fa fa-linkedin',
+            },
+            {
+                'enlace':'#',
+                'class':'fa fa-pinterest-p',
             },
         ],
-        'saludo': 'Buenas!',
-        'slider': [
+        'logo':{
+            'url':'#',
+            'src':'static/img/logo.png',
+        },
+        'menu_ppal':[
             {
-                'src':'img/fotografo-paisajes.jpeg',
-                'class':'d-block w-100',
-                'alt':'Descripción de foto 1',
-                'activo':True,
+                'url':'#',
+                'label':'Inicio',
+                'class':'active',
             },
             {
-                'src':'img/lago-paisaje.jpeg',
-                'class':'d-block w-100',
-                'alt':'Descripción de foto 2',
-                'activo':False,
+                'url':'#',
+                'label':'Quienes Somos',
             },
             {
-                'src':'img/luna-atardecer.jpg',
-                'class':'d-block w-100',
-                'alt':'Descripción de foto 3',
-                'activo':False,
+                'url':'#',
+                'label':'Tienda',
+            },
+            {
+                'url':'#',
+                'label':'Contáctenos',
+            },
+        ],
+        'carrito':{
+            'total':'$150.000',
+            'cant':3,
+        },
+        'categorias':[
+            {
+            'label' : 'Monitores', 
+            'url' : '#',
+            },
+            {
+            'label': 'Teclados y Mouses',  
+            'url' : '#',
+            },
+            {
+            'label': 'Tarjetas de Video', 
+            'url' : '#',
+            },
+            {
+            'label': 'RAM', 
+            'url' : '#',
+            },
+            {
+            'label': 'Discos SSD', 
+            'url' : '#',
+            },
+            {
+            'label': 'Portátiles', 
+            'url' : '#',
+            },
+            {
+            'label': 'Celulares', 
+            'url' : '#',
+            },
+            {
+            'label': 'Tablets', 
+            'url' : '#',
+            },
+            {
+            'label': 'Consolas', 
+            'url' : '#',
+            },
+            {
+            'label': 'Aplicaciones', 
+            'url' : '#',
+            },
+            {
+            'label': 'Sitios Web',
+            'url' : '#',
+            },
+        ],
+        'hero':{
+            'subtitulo':'Más reciente',
+            'h21':'CPU Game Max',
+            'h22':'para gamers pro',
+            'p':'100% personalizado, en AMD o Intel',
+            'boton':'ÁRMALO AHORA',
+            'boton_url':'#',
+        },
+        'owl_categorias':[
+            {
+                'url':'#',
+                'label':'Audifonos',
+                'imagen':'static/img/categorias/headphones.jpg',
+            },
+            {
+                'url':'#',
+                'label':'Teclados',
+                'imagen':'static/img/categorias/keyboard.jpg',
+            },
+            {
+                'url':'#',
+                'label':'Portátiles',
+                'imagen':'static/img/categorias/laptops.jpg',
+            },
+            {
+                'url':'#',
+                'label':'Monitores',
+                'imagen':'static/img/categorias/monitor.jpg',
+            },
+            {
+                'url':'#',
+                'label':'Mouses',
+                'imagen':'static/img/categorias/mouse.jpg',
             },
         ]
+
     })
     return HttpResponse("Hola Johnsito")
 
