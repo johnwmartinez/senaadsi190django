@@ -3,19 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-12-2021 a las 17:51:54
+-- Tiempo de generación: 17-02-2022 a las 23:37:23
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `adsi190`
@@ -120,7 +114,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$260000$8hWLjriBst6uzsHCSle9f1$gTBrihVU0zekpi4+kHDZL500qdmGQTMBRBjOQk+UeOk=', '2021-12-08 00:38:23.471810', 1, 'johnwmartinez', '', '', 'info@johnwmartinez.com', 1, 1, '2021-12-08 00:38:07.844741');
+(1, 'pbkdf2_sha256$260000$8hWLjriBst6uzsHCSle9f1$gTBrihVU0zekpi4+kHDZL500qdmGQTMBRBjOQk+UeOk=', '2022-02-17 22:05:12.136701', 1, 'johnwmartinez', '', '', 'info@johnwmartinez.com', 1, 1, '2021-12-08 00:38:07.844741');
 
 -- --------------------------------------------------------
 
@@ -175,7 +169,8 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (5, '2021-12-08 00:42:35.503292', '3', 'Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces', 1, '[{\"added\": {}}]', 8, 1),
 (6, '2021-12-08 00:43:09.548488', '3', 'Monitor', 1, '[{\"added\": {}}]', 7, 1),
 (7, '2021-12-08 00:43:10.895227', '4', 'Monitor gamer Samsung F24T35 led 24 \" azul y gris oscuro 100V/240V', 1, '[{\"added\": {}}]', 8, 1),
-(8, '2021-12-08 00:43:31.053905', '5', 'Monitor gamer curvo Samsung C27R500FHL led 27 \" dark blue gray 100V/240V', 1, '[{\"added\": {}}]', 8, 1);
+(8, '2021-12-08 00:43:31.053905', '5', 'Monitor gamer curvo Samsung C27R500FHL led 27 \" dark blue gray 100V/240V', 1, '[{\"added\": {}}]', 8, 1),
+(9, '2022-02-17 22:05:32.503541', '1', '__Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse', 2, '[{\"changed\": {\"fields\": [\"Nombre\"]}}]', 8, 1);
 
 -- --------------------------------------------------------
 
@@ -258,7 +253,8 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('6d0sc51hlfrwl1xpge3renvvcajonv0l', '.eJxVjEEOwiAQRe_C2pAOA8i4dO8ZyACjVA1NSrsy3l2bdKHb_977LxV5XWpcu8xxLOqkQB1-t8T5IW0D5c7tNuk8tWUek94UvdOuL1OR53l3_w4q9_qtM8lAJSWPGDx5A0AADu2VgxMxoSCSZaEU0Bv0HET4mEEGZzN5Mer9AcnlN1U:1mukyV:7NqtBdEqU9cCB_C3IUVDZNcXEM2OzmVH3zgDDhk1CFo', '2021-12-22 00:38:23.474126');
+('6d0sc51hlfrwl1xpge3renvvcajonv0l', '.eJxVjEEOwiAQRe_C2pAOA8i4dO8ZyACjVA1NSrsy3l2bdKHb_977LxV5XWpcu8xxLOqkQB1-t8T5IW0D5c7tNuk8tWUek94UvdOuL1OR53l3_w4q9_qtM8lAJSWPGDx5A0AADu2VgxMxoSCSZaEU0Bv0HET4mEEGZzN5Mer9AcnlN1U:1mukyV:7NqtBdEqU9cCB_C3IUVDZNcXEM2OzmVH3zgDDhk1CFo', '2021-12-22 00:38:23.474126'),
+('cbi2dd8lsf5kfcy5vd3salsxd6ja2lx3', '.eJxVjEEOwiAQRe_C2pAOA8i4dO8ZyACjVA1NSrsy3l2bdKHb_977LxV5XWpcu8xxLOqkQB1-t8T5IW0D5c7tNuk8tWUek94UvdOuL1OR53l3_w4q9_qtM8lAJSWPGDx5A0AADu2VgxMxoSCSZaEU0Bv0HET4mEEGZzN5Mer9AcnlN1U:1nKotk:arng3ERJBEzQ7V0eYR5PMyrO5ujRIK0-vF3zvpMTqMc', '2022-03-03 22:05:12.138323');
 
 -- --------------------------------------------------------
 
@@ -301,7 +297,7 @@ CREATE TABLE `tienda_producto` (
 --
 
 INSERT INTO `tienda_producto` (`id`, `nombre`, `descripcion`, `cantidad`, `precio`, `imagen`, `id_marca_id`) VALUES
-(1, 'Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse', 'Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse', 10, 99900, 'static/img/productos/teclado1_gT0zGbn.jpg', 2),
+(1, '__Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse', 'Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse', 10, 99900, 'static/img/productos/teclado1_gT0zGbn.jpg', 2),
 (2, 'Teclado gamer Redragon Kumara K552 QWERTY Outemu Blue español latinoamérica color negro con luz roja', 'Teclado gamer Redragon Kumara K552 QWERTY Outemu Blue español latinoamérica color negro con luz roja', 90, 159900, 'static/img/productos/teclado2_JeF4lc2.jpg', 2),
 (3, 'Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces', 'Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces', 6, 199900, 'static/img/productos/teclado3_Nwia3rZ.jpg', 2),
 (4, 'Monitor gamer Samsung F24T35 led 24 \" azul y gris oscuro 100V/240V', 'Monitor gamer Samsung F24T35 led 24 \" azul y gris oscuro 100V/240V', 5, 739900, 'static/img/productos/monitor1_1zHkhJ8.jpg', 3),
@@ -441,7 +437,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT de la tabla `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `django_content_type`
@@ -511,7 +507,3 @@ ALTER TABLE `django_admin_log`
 ALTER TABLE `tienda_producto`
   ADD CONSTRAINT `tienda_producto_id_marca_id_83167c81_fk_tienda_marca_id` FOREIGN KEY (`id_marca_id`) REFERENCES `tienda_marca` (`id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
