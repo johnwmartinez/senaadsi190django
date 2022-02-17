@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'tienda.apps.TiendaConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,14 @@ WSGI_APPLICATION = 'adsi190.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'adsi190',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOSTNAME': 'localhost',
+        'PORT': '3306',
     }
 }
 

@@ -1,152 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Softbox190 es una tienda virtual de hardware y software hecho a la medida.">
-    <meta name="keywords" content="Softbox, hardware, software">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Softbox190 | Productos de Hardware | Software a la medida</title>
+{% extends '_includes/template.html' %}
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="static/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="static/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="static/css/style.css" type="text/css">
-</head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="#"><img src="static/img/logo.png" alt=""></a>
-        </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="static/img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            {% for red in social_media%}
-                <a href="{{red.enlace}}"><i class="{{red.class}}"></i></a>
-            {% endfor %}
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> {{correo}}</li>
-                <li>{{promesa}}</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Humberger End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> {{correo}}</li>
-                                <li>{{promesa}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                            {% for red in social_media%}
-                                <a href="{{red.enlace}}"><i class="{{red.class}}"></i></a>
-                            {% endfor %}
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Ingresar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="{{logo.url}}"><img src="{{logo.src}}" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            {% for menu in menu_ppal %}
-                            <li {% if menu.class == 'active' %} class="active" {%endif%}><a href="{{menu.url}}">{{menu.label}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{carrito.cant}}</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">Total: <span>{{carrito.total}}</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
-
+{% block 'contenido' %}
+    
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="container">
@@ -158,9 +13,17 @@
                             <span>Todas las categorías</span>
                         </div>
                         <ul>
-                            {% for categoria in categorias%}
-                            <li><a href="{{categoria.url}}">{{categoria.label}}</a></li>
-                            {% endfor %}
+                            <li><a href="shop-grid.html">Monitores</a></li>
+                            <li><a href="shop-grid.html">Teclados y Mouses</a></li>
+                            <li><a href="shop-grid.html">Tarjetas de Video</a></li>
+                            <li><a href="shop-grid.html">RAM</a></li>
+                            <li><a href="shop-grid.html">Discos SSD</a></li>
+                            <li><a href="shop-grid.html">Portátiles</a></li>
+                            <li><a href="shop-grid.html">Celulares</a></li>
+                            <li><a href="shop-grid.html">Tablets</a></li>
+                            <li><a href="shop-grid.html">Consolas</a></li>
+                            <li><a href="shop-grid.html">Aplicaciones</a></li>
+                            <li><a href="shop-grid.html">Sitios Web</a></li>
                         </ul>
                     </div>
                 </div>
@@ -177,19 +40,74 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>{{celular}}</h5>
+                                <h5>+57 300 423 5239</h5>
                                 <span>Soporte 24/7</span>
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="static/img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>{{hero.subtitulo}}</span>
-                            <h2>{{hero.h21}}<br />{{hero.h22}}</h2>
-                            <p>{{hero.p}}</p>
-                            <a href="{{hero.boton_url}}" class="primary-btn">{{hero.boton}}</a>
+
+
+
+
+                    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
                         </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="hero__item set-bg" data-setbg="/static/img/hero/banner.jpg">
+                                    <div class="hero__text">
+                                        <span>Más reciente</span>
+                                        <h2>CPU Game Max<br />para gamers pro</h2>
+                                        <p>100% personalizado, en AMD o Intel</p>
+                                        <a href="shoping-details.html" class="primary-btn">CÓMPRALO AHORA</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="hero__item set-bg" data-setbg="/static/img/hero/banner.jpg">
+                                    <div class="hero__text">
+                                        <span>Más reciente</span>
+                                        <h2>CPU Game Max<br />para gamers pro</h2>
+                                        <p>100% personalizado, en AMD o Intel</p>
+                                        <a href="shoping-details.html" class="primary-btn">COTIZA AHORA</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="hero__item set-bg" data-setbg="/static/img/hero/banner.jpg">
+                                    <div class="hero__text">
+                                        <span>Más reciente</span>
+                                        <h2>CPU Game Max<br />para gamers pro</h2>
+                                        <p>100% personalizado, en AMD o Intel</p>
+                                        <a href="shoping-details.html" class="primary-btn">ÁRMALO AHORA</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
+
+                   
+
+
+
+
+                    
                 </div>
             </div>
         </div>
@@ -197,109 +115,141 @@
     <!-- Hero Section End -->
 
     <!-- Categories Section Begin -->
-    <section class="categories mb-5">
+    <section class="categories mb-3">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    {% for cada in owl_categorias%}
                     <div class="col-lg-12">
-                        <div class="categories__item set-bg" data-setbg="{{cada.imagen}}">
-                            <h5><a href="{{cada.url}}">{{cada.label}}</a></h5>
+                        <div class="categories__item set-bg" data-setbg="/static/img/categorias/headphones.jpg">
+                            <h5><a href="shop-grid.html">Audifonos</a></h5>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="col-lg-12">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categorias/keyboard.jpg">
+                            <h5><a href="shop-grid.html">Teclados</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categorias/laptops.jpg">
+                            <h5><a href="shop-grid.html">Portátiles</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categorias/monitor.jpg">
+                            <h5><a href="shop-grid.html">Monitores</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="categories__item set-bg" data-setbg="/static/img/categorias/mouse.jpg">
+                            <h5><a href="shop-grid.html">Mouses</a></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <div class="col-lg-12 d-none">
-        <div class="categories__item set-bg" data-setbg="static/img/categories/cat-2.jpg">
+        <div class="categories__item set-bg" data-setbg="/static/img/categories/cat-2.jpg">
             <h5><a href="#">Dried Fruit</a></h5>
         </div>
     </div>
     <!-- Categories Section End -->
-
-
-
-
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
+    
+    <!-- Banner Begin -->
+    <div class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src="static/img/logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Dirección: {{direccion}}</li>
-                            <li>Teléfono: {{celular}}</li>
-                            <li>E-mail: {{correo}}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Enlaces importantes</h6>
-                        <ul>
-                            <li><a href="#">Enlace 1</a></li>
-                            <li><a href="#">Enlace 2</a></li>
-                            <li><a href="#">Enlace 3</a></li>
-                            <li><a href="#">Enlace 4</a></li>
-                            <li><a href="#">Enlace 5</a></li>
-                            <li><a href="#">Enlace 6</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Enlace 1</a></li>
-                            <li><a href="#">Enlace 2</a></li>
-                            <li><a href="#">Enlace 3</a></li>
-                            <li><a href="#">Enlace 4</a></li>
-                            <li><a href="#">Enlace 5</a></li>
-                            <li><a href="#">Enlace 6</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Inscríbete a nuestro newsletter</h6>
-                        <p>Recibe ofertas y noticias sobre nuestro sitio.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Ingrese su e-mail">
-                            <button type="submit" class="site-btn">Suscribirse</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            {% for red in social_media%}
-                                <a href="{{red.enlace}}"><i class="{{red.class}}"></i></a>
-                            {% endfor %}
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="container-fluid h-100 py-5 banner_home1">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-6"><img src="/static/img/home/portatiles.jpeg" alt="Portatiles"></div>
+                            <div class="col-6">
+                                <h3 class="fstrong">Estrena portátil</h3>
+                                <p>Hasta 25% en descuentos</p>
+                                <a href="shop-grid.html" class="primary-btn">COMPRA HOY</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados. Diseño por: John W. Martínez</p></div>
-                        <div class="footer__copyright__payment"><img src="static/img/payment-item.png" alt=""></div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="container-fluid h-100 py-5 banner_home2">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-6"><img src="/static/img/home/smartphones.jpeg" alt="Portatiles"></div>
+                            <div class="col-6">
+                                <h3 class="fstrong">Compra celular</h3>
+                                <p>10% de descuento en línea premium</p>
+                                <a href="shop-grid.html" class="primary-btn">MÁS INFORMACIÓN</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
+    </div>
+    <!-- Banner End -->
 
-    <!-- Js Plugins -->
-    <script src="static/js/jquery-3.3.1.min.js"></script>
-    <script src="static/js/bootstrap.min.js"></script>
-    <script src="static/js/jquery.nice-select.min.js"></script>
-    <script src="static/js/jquery-ui.min.js"></script>
-    <script src="static/js/jquery.slicknav.js"></script>
-    <script src="static/js/mixitup.min.js"></script>
-    <script src="static/js/owl.carousel.min.js"></script>
-    <script src="static/js/main.js"></script>
+    <!-- Latest Product Section Begin -->
+    <section class="latest-product spad mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="d-none d-md-block col-lg-4 col-md-6">
+                    <img src="/static/img/home/technology.jpeg" alt="" class="h-100 object-fit-center">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Últimos productos</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                
+                                <a href="shop-details.html" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/static/img/productos/teclado3.jpg" alt="Teclado">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces</h6>
+                                        <span>$119.900</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="shop-details.html" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/static/img/productos/monitor1.jpg" alt="Monitor">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Monitor gamer Samsung F24T35 led 24 " azul y gris oscuro 100V/240V</h6>
+                                        <span>$739.900</span>
+                                    </div>
+                                </a>
+                                <a href="shop-details.html" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/static/img/productos/monitor2.jpg" alt="Monitor">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Monitor gamer curvo Samsung C27R500FHL led 27 " dark blue gray 100V/240V</h6>
+                                        <span>$953.900</span>
+                                    </div>
+                                </a>
+                                <a href="shop-details.html" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/static/img/productos/monitor3.jpg" alt="Monitor">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Monitor gamer curvo Asus Tuf Gaming VG24VQ led 23.6 " negro 100V/240V</h6>
+                                        <span>$1.145.900</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-lg-4 col-md-6 home_banner3">
+                    <h3 class="mt-3 ml-3 text-right blanco t-shadow-1">Tecnología</h3>
+                    <p class="text-right blanco t-shadow-1">Los mejores Gadgets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Product Section End -->
 
-
-
-</body>
-
-</html>
+{% endblock %}

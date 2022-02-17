@@ -1,0 +1,38 @@
+.fstrong{
+    font-weight:bold;
+}
+.blanco{
+    color:var(--bs-white);
+}
+.t-shadow-1{
+    text-shadow:2px 3px 2px rgba(0, 0, 0, 0.4);
+}
+.text-right{
+    text-align:right;
+}
+.object-fit-center{
+    object-fit: cover;
+    object-position: center;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 6%;
+}
+.banner_home1{
+    background-color: #f2f2f2;
+}
+.banner_home2{
+    background-color: #f7ebcb;
+}
+.home_banner3{
+    background: url('../img/home/realidad_aumentada.jpeg') no-repeat center;
+    background-size:cover;
+}
+.price-range-wrap .range-slider .price-input input {
+    max-width: 32%;
+}
+.price-range-wrap .range-slider .price-input:after {
+    left: 72px;
+}
+.shoping__cart__table table tbody tr td.shoping__cart__item img {
+    max-width: 80px;
+}

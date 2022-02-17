@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth import login as lg
 from django.contrib.auth import authenticate
 from django.shortcuts import redirect
+from tienda.views import Producto
 
 def saludo(request):
     return render(request, 'index.html', {
@@ -141,6 +142,18 @@ def saludo(request):
     })
     return HttpResponse("Hola Johnsito")
 
+def home(request):
+    productos = Producto.objects.all()
+    return render(request, 'index.html', {
+        'producto': productos
+    })
+
+def quienes_somos(request):
+    return render(request, 'quienes-somos.html', {
+        'titulo':'Quiénes Somos',
+        'contenido':'Este es el contenido de quienes somos',
+    })
+    return HttpResponse("Sección De quienes somos!")
 
 def login(request):
 
