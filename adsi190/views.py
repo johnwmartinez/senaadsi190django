@@ -173,7 +173,7 @@ def quienes_somos(request):
     request.session['inicial'] = 1
     return render(request, 'quienes-somos.html', {
         'titulo':'Quiénes Somos',
-        'contenido':'Este es el contenido de quienes somos',
+        'contenido':"",
     })
     return HttpResponse("Sección De quienes somos!")
 
