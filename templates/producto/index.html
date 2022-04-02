@@ -14,17 +14,9 @@
                             <span>Todas las categorías</span>
                         </div>
                         <ul>
-                            <li><a href="shop-grid.html">Monitores</a></li>
-                            <li><a href="shop-grid.html">Teclados y Mouses</a></li>
-                            <li><a href="shop-grid.html">Tarjetas de Video</a></li>
-                            <li><a href="shop-grid.html">RAM</a></li>
-                            <li><a href="shop-grid.html">Discos SSD</a></li>
-                            <li><a href="shop-grid.html">Portátiles</a></li>
-                            <li><a href="shop-grid.html">Celulares</a></li>
-                            <li><a href="shop-grid.html">Tablets</a></li>
-                            <li><a href="shop-grid.html">Consolas</a></li>
-                            <li><a href="shop-grid.html">Aplicaciones</a></li>
-                            <li><a href="shop-grid.html">Sitios Web</a></li>
+                            {% for categoria in categorias %}
+                            <li><a href="#">{{categoria}}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -61,7 +53,7 @@
                     <div class="breadcrumb__text">
                         <h2>Tienda</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
+                            <a href="{% url 'home' %}">Home</a>
                             <span>Tienda</span>
                         </div>
                     </div>
@@ -80,130 +72,28 @@
                         <div class="sidebar__item">
                             <h4>Categorías</h4>
                             <ul>
-                                <li><a href="shop-grid.html">Monitores</a></li>
-                                <li><a href="shop-grid.html">Teclados y Mouses</a></li>
-                                <li><a href="shop-grid.html">Tarjetas de Video</a></li>
-                                <li><a href="shop-grid.html">RAM</a></li>
-                                <li><a href="shop-grid.html">Discos SSD</a></li>
-                                <li><a href="shop-grid.html">Portátiles</a></li>
-                                <li><a href="shop-grid.html">Celulares</a></li>
-                                <li><a href="shop-grid.html">Tablets</a></li>
-                                <li><a href="shop-grid.html">Consolas</a></li>
-                                <li><a href="shop-grid.html">Aplicaciones</a></li>
-                                <li><a href="shop-grid.html">Sitios Web</a></li>
+                                {% for categoria in categorias %}
+                                <li><a href="#">{{categoria}}</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
-                        <div class="sidebar__item">
-                            <h4>Precio</h4>
-                            <div class="price-range-wrap">
-                                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                    data-min="10000" data-max="10000000">
-                                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                </div>
-                                <div class="range-slider">
-                                    <div class="price-input">
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
-                        
-                        <div class="sidebar__item">
-                            <div class="latest-product__text">
-                                <h4>Últimos productos</h4>
-                                <div class="latest-product__slider owl-carousel">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/teclado1.jpg" alt="Teclado">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Logitech Mk235, Combo Inalámbrico Teclado Multimedia Y Mouse</h6>
-                                                <span>$99.900</span>
-                                            </div>
-                                        </a>
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/teclado2.jpg" alt="Teclado">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>
-                                                    Teclado gamer Redragon Kumara K552 QWERTY Outemu Blue español latinoamérica color negro con luz roja</h6>
-                                                <span>$159.900</span>
-                                            </div>
-                                        </a>
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/teclado3.jpg" alt="Teclado">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces</h6>
-                                                <span>$119.900</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/monitor1.jpg" alt="Monitor">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Monitor gamer Samsung F24T35 led 24 " azul y gris oscuro 100V/240V</h6>
-                                                <span>$739.900</span>
-                                            </div>
-                                        </a>
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/monitor2.jpg" alt="Monitor">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Monitor gamer curvo Samsung C27R500FHL led 27 " dark blue gray 100V/240V</h6>
-                                                <span>$953.900</span>
-                                            </div>
-                                        </a>
-                                        <a href="shop-details.html" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="/static/img/productos/monitor3.jpg" alt="Monitor">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Monitor gamer curvo Asus Tuf Gaming VG24VQ led 23.6 " negro 100V/240V</h6>
-                                                <span>$1.145.900</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-7">
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
-                                <div class="filter__sort">
-                                    <span>Organizar por</span>
-                                    <select>
-                                        <option value="0">Precio menor a mayor</option>
-                                        <option value="0">Precio mayor a menor</option>
-                                        <option value="0">Más recientes</option>
-                                        <option value="0">Más antiguos</option>
-                                    </select>
-                                </div>
+                                
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>16</span> productos encontrados</h6>
+                                    <h6><span>{{todos_los_productos}}</span> productos encontrados</h6>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
-                                <div class="filter__option">
-                                    <span class="icon_grid-2x2"></span>
-                                    <span class="icon_ul"></span>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -213,26 +103,19 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{producto.imagen.url}}">
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="#" class="add_car_indv" data-id="{{producto.id}}"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="productos/{{producto.id}}">{{producto.nombre}}</a></h6>
-                                    <h5>${{producto.precio|floatformat:0|intcomma}}</h5>
+                                    <h6><a href="{{producto.id}}">{{producto.nombre}}</a></h6>
+                                    <h5><input type="hidden" class="indv_precio" value="{{producto.precio}}" />${{producto.precio|floatformat:0|intcomma}}</h5>
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
                         
                     </div>
-                    <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-                    </div>
+                   
                 </div>
             </div>
         </div>

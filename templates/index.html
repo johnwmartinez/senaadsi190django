@@ -13,17 +13,9 @@
                             <span>Todas las categorías</span>
                         </div>
                         <ul>
-                            <li><a href="shop-grid.html">Monitores</a></li>
-                            <li><a href="shop-grid.html">Teclados y Mouses</a></li>
-                            <li><a href="shop-grid.html">Tarjetas de Video</a></li>
-                            <li><a href="shop-grid.html">RAM</a></li>
-                            <li><a href="shop-grid.html">Discos SSD</a></li>
-                            <li><a href="shop-grid.html">Portátiles</a></li>
-                            <li><a href="shop-grid.html">Celulares</a></li>
-                            <li><a href="shop-grid.html">Tablets</a></li>
-                            <li><a href="shop-grid.html">Consolas</a></li>
-                            <li><a href="shop-grid.html">Aplicaciones</a></li>
-                            <li><a href="shop-grid.html">Sitios Web</a></li>
+                            {% for categoria in categorias %}
+                            <li><a href="{% url 'producto' %}">{{ categoria }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -65,7 +57,7 @@
                                         <span>Más reciente</span>
                                         <h2>CPU Game Max<br />para gamers pro</h2>
                                         <p>100% personalizado, en AMD o Intel</p>
-                                        <a href="shoping-details.html" class="primary-btn">CÓMPRALO AHORA</a>
+                                        <a href="{% url 'producto' %}" class="primary-btn">CÓMPRALO AHORA</a>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +67,7 @@
                                         <span>Más reciente</span>
                                         <h2>CPU Game Max<br />para gamers pro</h2>
                                         <p>100% personalizado, en AMD o Intel</p>
-                                        <a href="shoping-details.html" class="primary-btn">COTIZA AHORA</a>
+                                        <a href="{% url 'producto' %}" class="primary-btn">COTIZA AHORA</a>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +77,7 @@
                                         <span>Más reciente</span>
                                         <h2>CPU Game Max<br />para gamers pro</h2>
                                         <p>100% personalizado, en AMD o Intel</p>
-                                        <a href="shoping-details.html" class="primary-btn">ÁRMALO AHORA</a>
+                                        <a href="{% url 'producto' %}" class="primary-btn">ÁRMALO AHORA</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,11 +94,6 @@
                         </button>
                     </div>
 
-                   
-
-
-
-
                     
                 </div>
             </div>
@@ -121,27 +108,27 @@
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-12">
                         <div class="categories__item set-bg" data-setbg="/static/img/categorias/headphones.jpg">
-                            <h5><a href="shop-grid.html">Audifonos</a></h5>
+                            <h5><a href="{% url 'producto' %}">Audifonos</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="categories__item set-bg" data-setbg="/static/img/categorias/keyboard.jpg">
-                            <h5><a href="shop-grid.html">Teclados</a></h5>
+                            <h5><a href="{% url 'producto' %}">Teclados</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="categories__item set-bg" data-setbg="/static/img/categorias/laptops.jpg">
-                            <h5><a href="shop-grid.html">Portátiles</a></h5>
+                            <h5><a href="{% url 'producto' %}">Portátiles</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="categories__item set-bg" data-setbg="/static/img/categorias/monitor.jpg">
-                            <h5><a href="shop-grid.html">Monitores</a></h5>
+                            <h5><a href="{% url 'producto' %}">Monitores</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="categories__item set-bg" data-setbg="/static/img/categorias/mouse.jpg">
-                            <h5><a href="shop-grid.html">Mouses</a></h5>
+                            <h5><a href="{% url 'producto' %}">Mouses</a></h5>
                         </div>
                     </div>
                 </div>
@@ -166,7 +153,7 @@
                             <div class="col-6">
                                 <h3 class="fstrong">Estrena portátil</h3>
                                 <p>Hasta 25% en descuentos</p>
-                                <a href="shop-grid.html" class="primary-btn">COMPRA HOY</a>
+                                <a href="{% url 'producto' %}" class="primary-btn">COMPRA HOY</a>
                             </div>
                         </div>
                     </div>
@@ -178,7 +165,7 @@
                             <div class="col-6">
                                 <h3 class="fstrong">Compra celular</h3>
                                 <p>10% de descuento en línea premium</p>
-                                <a href="shop-grid.html" class="primary-btn">MÁS INFORMACIÓN</a>
+                                <a href="{% url 'producto' %}" class="primary-btn">MÁS INFORMACIÓN</a>
                             </div>
                         </div>
                     </div>
@@ -200,45 +187,43 @@
                         <h4>Últimos productos</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                
-                                <a href="shop-details.html" class="latest-product__item">
+                                {% for random in random1 %}
+                                <a href="/productos/{{random.id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="/static/img/productos/teclado3.jpg" alt="Teclado">
+                                        <img src="/{{random.imagen}}" alt="{{random.nombre}}" style="width:140px; height:140px; object-fit:cover; ">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Combo Gamer Teclado Usb Con Ñ + Mouse Óptico Usb Con Luces</h6>
-                                        <span>$119.900</span>
+                                        <h6>{{random.nombre}}</h6>
+                                        <span>${{random.precio}}</span>
                                     </div>
                                 </a>
+                                {% endfor %}
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                <a href="shop-details.html" class="latest-product__item">
+                                {% for random in random2 %}
+                                <a href="/productos/{{random.id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="/static/img/productos/monitor1.jpg" alt="Monitor">
+                                        <img src="/{{random.imagen}}" alt="{{random.nombre}}" style="width:140px; height:140px; object-fit:cover;">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Monitor gamer Samsung F24T35 led 24 " azul y gris oscuro 100V/240V</h6>
-                                        <span>$739.900</span>
+                                        <h6>{{random.nombre}}</h6>
+                                        <span>${{random.precio}}</span>
                                     </div>
                                 </a>
-                                <a href="shop-details.html" class="latest-product__item">
+                                {% endfor %}
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                {% for random in random3 %}
+                                <a href="/productos/{{random.id}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="/static/img/productos/monitor2.jpg" alt="Monitor">
+                                        <img src="/{{random.imagen}}" alt="{{random.nombre}}" style="width:140px; height:140px; object-fit:cover;">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Monitor gamer curvo Samsung C27R500FHL led 27 " dark blue gray 100V/240V</h6>
-                                        <span>$953.900</span>
+                                        <h6>{{random.nombre}}</h6>
+                                        <span>${{random.precio}}</span>
                                     </div>
                                 </a>
-                                <a href="shop-details.html" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/static/img/productos/monitor3.jpg" alt="Monitor">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Monitor gamer curvo Asus Tuf Gaming VG24VQ led 23.6 " negro 100V/240V</h6>
-                                        <span>$1.145.900</span>
-                                    </div>
-                                </a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

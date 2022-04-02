@@ -2900,6 +2900,11 @@ ol {
 	letter-spacing: 2px;
 }
 
+.shoping__cart__table.carrito_global table tbody tr td.shoping__cart__quantity .pro-qty .qtybtn
+{
+	display:none;
+}
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
